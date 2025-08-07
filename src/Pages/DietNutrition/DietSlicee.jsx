@@ -36,15 +36,6 @@ const dietSlice = createSlice({
   name: 'diet',
   initialState,
   reducers: {
-    // addDiet(state, action) {
-    //   state.diets.push(action.payload);
-    // },
-    // selectDiet(state, action) {
-    //   state.selectedDietId = action.payload;
-    // },
-    // removeDiet(state, action) {
-    //   state.diets = state.diets.filter(d => d.id !== action.payload);
-    // },
   },
 });
 

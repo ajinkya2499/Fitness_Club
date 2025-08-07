@@ -8,9 +8,9 @@ import authReducer from '../../Pages/EntryPages/authSlice'
 const store = configureStore({
   reducer: {
     product: productReducer,
-     diet: dietReducer,
-      workout: workoutReducer,
-       auth: authReducer,
+    diet: dietReducer,
+    workout: workoutReducer,
+    auth: authReducer,
   },
 });
 

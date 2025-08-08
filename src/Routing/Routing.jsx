@@ -7,15 +7,14 @@ import ProductPage from '../Pages/Products/ProductPage';
 import All_Whey from '../Pages/Products/All_Whey';
 import DietNutrition from '../Pages/DietNutrition/DietNutrition';
 import WorkoutTrainer from '../Pages/WorkoutTrainer/WorkoutTrainer';
-import Login from '../Pages/EntryPages/Login';
+import Login from '../Components/EntryPages/Login';
 import PrivateRoute from './PrivateRoute';
 import NotFound from './NotFound';
-import Signup from '../Pages/EntryPages/SignIn'
+import SignUpForm from '../Components/EntryPages/SignUpForm'
 
 function Routing() {
   return (
     <>
-
    <Routes>
       <Route path="/" element={<Login />} />
      
@@ -29,10 +28,9 @@ function Routing() {
         }
       >
         <Route index element={<Home />} />
-         <Route path="SignIn" element={<Signup/>} />
+         <Route path="SignUpForm" element={<SignUpForm/>} />
         <Route path="contact" element={<Contact />} />
         <Route path="product" element={<ProductPage />} />
-        <Route path="whey" element={<All_Whey />} />
         <Route path="DietNutrition" element={<DietNutrition />} />
         <Route path="WorkoutTrainer" element={<WorkoutTrainer />} />
       </Route>

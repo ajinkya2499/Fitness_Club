@@ -1,9 +1,11 @@
 import React from 'react'
 
-import Home from './Pages/Home'
+
+import Navbar from './Components/Navbar/Navbar'
+import SignUpForm from './Components/EntryPages/SignUpForm'
+import Login from './Components/EntryPages/Login'
+
 import Routing from './Routing/Routing'
-import Login from './Pages/EntryPages/Login'
-import Signup from './Pages/EntryPages/SignIn'
 
 
 
@@ -15,9 +17,10 @@ function App() {
     
     <Routing/>
 
+{/* <Navbar/> */}
     {/* <Home/> */}
     {/* <Login/> */}
-    {/* <Signup/> */}
+    {/* <SignUpForm/> */}
 
    
         </>

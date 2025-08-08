@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { login, logout } from '../../Pages/EntryPages/authSlice';
+import { login, logout } from '../EntryPages/authSlice';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import LOGO from '../../assets/Images/FreeSample-Vectorizer-io-fitness_logo.svg';
@@ -89,9 +89,11 @@ const handleCloseSnackbar = () => {
   return (
     <Box
       sx={{
-        minHeight: "100vh",
+        
+        maxHeight:'100vh',
         display: "flex",
         flexDirection: { xs: "column", md: "row" }, // Responsive
+         overflow: "hidden",
       }}
     >
       {/* Left: Login Form */}
@@ -104,6 +106,7 @@ const handleCloseSnackbar = () => {
           justifyContent: "center",
           p: 4,
           overflow: "hidden",
+          
         }}
       >
         <Paper

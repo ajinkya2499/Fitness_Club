@@ -1,6 +1,6 @@
 // src/layout/Layout.jsx
 import Navbar from '../Components/Navbar/Navbar';
-// import Footer from '../Components/';
+import Footer from '../Components/Footer/Footer';
 import { Outlet } from 'react-router-dom';
 
 const Layout = () => {
@@ -10,7 +10,7 @@ const Layout = () => {
       <main style={{ minHeight: '80vh' }}>
         <Outlet /> {/* This renders the nested route component */}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

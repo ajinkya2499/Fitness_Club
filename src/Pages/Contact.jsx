@@ -34,9 +34,9 @@ const Contact = () => {
     }));
   };
 
-  const handlePhoneChange = (value) => {
-    setForm((prev) => ({ ...prev, phone: value }));
-  };
+  // const handlePhoneChange = (value) => {
+  //   setForm((prev) => ({ ...prev, phone: value }));
+  // };
 
   const handleSubmit = () => {
     console.log(form);
@@ -59,7 +59,7 @@ const Contact = () => {
         </Typography>
 
         <Grid container spacing={2} columns={16}>
-          <Grid item xs={8}>
+          <Grid item size={12}>
             <TextField
               fullWidth
               name="fullName"
@@ -78,7 +78,7 @@ const Contact = () => {
             />
           </Grid>
 
-          <Grid item xs={8}>
+          <Grid item size={12}>
             <TextField
               fullWidth
               name="email"
@@ -100,7 +100,7 @@ const Contact = () => {
 
           <Grid columns={12}>
 
-         <Grid item xs={10}>
+         <Grid item size={12}>
             <TextField
               fullWidth
               name="message"
@@ -111,7 +111,7 @@ const Contact = () => {
               multiline
               rows={4}
               style={{marginTop:'10px'}}
-              inputProps={{ maxLength: 300 }}
+              inputProps={{ maxLength: 200 }}
               helperText={`${form.message.length}/300`}
             />
           </Grid>

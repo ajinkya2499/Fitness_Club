@@ -2,13 +2,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login, logout } from '../EntryPages/authSlice';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import LOGO from '../../assets/Images/FreeSample-Vectorizer-io-fitness_logo.svg';
+  
+import LOGO from '../../assets/Images/icons8-zendesk-100.png';
 import RightSide from '../../assets/Images/875dfd8145685719f8cc26a4a2570b9a.jpg'
 import CustomSnackbar from '../../util/CustomSnackbar'
 
 import {
   Box,
-  TextField,
+  TextField, 
   Button,
   Typography,
   InputAdornment,
@@ -41,10 +42,7 @@ const showSnackbar = (message, severity = 'success') => {
 const handleCloseSnackbar = () => {
   setSnackbar((prev) => ({ ...prev, open: false }));
 };
-
-
-
-    
+  
 
   const HandleSubmit = (e) => {
     e.preventDefault();
@@ -121,13 +119,13 @@ const handleCloseSnackbar = () => {
             marginLeft: { xs: 0, md: 5 }, // Margin for larger screens
           }}
         >
-          <Box textAlign="center" mb={3}>
+          <Box textAlign="center" mb={1}>
             <img
               src={LOGO} // ✅ Use path relative to public folder
               alt="TheFitFlex Logo"
               style={{
-                width: "100px",
-                height: "100%",
+                width: "70px",
+                height: "20%",
               }}
             />
             <Typography variant="h6" fontWeight="bold" color="#b4b9bbff">

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate,useLocation } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -9,18 +9,43 @@ import {
   Box,
   Typography
 } from '@mui/material';
-import LOGO from '../../assets/Images/FreeSample-Vectorizer-io-fitness_logo.svg'
+import LOGO from '../../assets/Images/icons8-zendesk-100.png'
+import DropdownLogo from '../../assets/Images/icons8-dropdown-50 (1).png'
 
 function Navbar() {
+  const Location=useLocation();
+  console.log("location :: ",Location.pathname);
+  
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
+    console.log("menu opened"); 
   };
+
+  const HandleWorkout=()=>{
+    navigate('/WorkoutTrainer');
+    console.log("Workout Clicked");
+     setAnchorEl(null);
+  }
+
 
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
+
+  const HandleJoin=()=>{
+    navigate('/SignUpForm');
+  }
+
+  const HandleProducts=()=>{
+    navigate('/products')
+    console.log("Products Clicked");  
+  }
+
+    // Hide Join Now button if already on SignUpForm page
+  const hideJoinNow = location.pathname === "/SignUpForm";
 
   return (
     <AppBar position="static" sx={{ backgroundColor: '#111', px: 2 }}>
@@ -31,7 +56,7 @@ function Navbar() {
           <img
             src={LOGO} // ✅ Adjust your logo path
             alt="Logo"
-            style={{ height: 40, marginRight: 8 }}
+            style={{ height: 50, marginRight: 8 ,color: 'white'}}
           />
           <Typography variant="h6" sx={{ color: 'white' }}>
             TheFitFlex
@@ -40,7 +65,7 @@ function Navbar() {
 
         {/* Right: Links */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <Button component={Link} to="/home" sx={{ color: 'white' }}>
+          <Button component={Link} to="/home" sx={{ color: 'white','&:hover': { backgroundColor: '#ede89aff',color:'black' }, borderRadius: '30px' }}>
             Home
           </Button>
 
@@ -50,7 +75,8 @@ function Navbar() {
               onClick={handleMenuOpen}
               sx={{ color: 'white' }}
             >
-              Services *
+                            Services 
+              <img src={ DropdownLogo} alt="" color='white' style={{width:'20px', fontSize:'bold'}}/>
             </Button>
             <Menu
               anchorEl={anchorEl}
@@ -81,9 +107,7 @@ function Navbar() {
               </MenuItem>
 
               <MenuItem
-                component={Link}
-                to="/workout"
-                onClick={handleMenuClose}
+                onClick={HandleWorkout}
                 sx={{ '&:hover': { backgroundColor: '#fff176' } }}
               >
                 Workout
@@ -92,21 +116,22 @@ function Navbar() {
             </Menu>
           </Box>
 
-          <Button component={Link} to="/product" sx={{ color: 'white' }}>
+          <Button sx={{ color: 'white' }} onClick={HandleProducts}>
             Products
           </Button>
 
+         {!hideJoinNow && (
           <Button
             variant="contained"
-            to="/SignUpForm"
             sx={{
               backgroundColor: 'yellow',
               color: '#111',
-              '&:hover': { backgroundColor: '#fdd835' },
-            }}
+              '&:hover': { backgroundColor: '#fdd835' }}}
+              onClick={HandleJoin}
           >
             Join Now
           </Button>
+            )}
         </Box>
       </Toolbar>
     </AppBar>

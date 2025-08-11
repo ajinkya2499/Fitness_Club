@@ -7,8 +7,8 @@ const Layout = () => {
   return (
     <>
       <Navbar />
-      <main style={{ minHeight: '80vh' }}>
-        <Outlet /> {/* This renders the nested route component */}
+        <main style={{ minHeight: '80vh' }}>
+        <Outlet /> 
       </main>
       <Footer />
     </>

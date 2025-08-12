@@ -9,10 +9,11 @@ import {
   InputAdornment
 } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 
 function SignUpForm() {
+ 
   const [fromData, setFromData] = useState({
     firstname: '',
     lastname: '',
@@ -40,6 +41,7 @@ function SignUpForm() {
     e.preventDefault();
     console.log('Form submitted:', fromData);
   };
+
 
   
 
@@ -173,7 +175,7 @@ function SignUpForm() {
 
       <Typography variant="body2" align="center" mt={2} color="grey">
         Already have an account?{' '}
-        <Link to="/" style={{ color: '#1a237e', textDecoration: 'none' }}>
+        <Link to="/login"  style={{ color: '#1a237e', textDecoration: 'none' }}>
           Log In
         </Link>
       </Typography>

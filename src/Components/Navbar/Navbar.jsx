@@ -58,10 +58,10 @@ function Navbar() {
             alt="Logo"
             style={{ height: 50, marginRight: 8 ,color: 'white'}}
           />
-          <Typography variant="h6" sx={{ color: 'white' }}>
+          {/* <Typography variant="h6" sx={{ color: 'white',fontWeight: "bold"}}>
             TheFitFlex
-          </Typography>
-        </Box>
+          </Typography> */}
+           <h2 style={{ color: "#fdd835", fontWeight: "bold" }}>The<span style={{ color: "#fff" }}>FitFlex</span></h2></Box>
 
         {/* Right: Links */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -73,7 +73,7 @@ function Navbar() {
           <Box>
             <Button
               onClick={handleMenuOpen}
-              sx={{ color: 'white' }}
+               sx={{ color: 'white','&:hover': { backgroundColor: '#ede89aff',color:'black' }, borderRadius: '30px'}}
             >
                             Services 
               <img src={ DropdownLogo} alt="" color='white' style={{width:'20px', fontSize:'bold'}}/>
@@ -116,7 +116,7 @@ function Navbar() {
             </Menu>
           </Box>
 
-          <Button sx={{ color: 'white' }} onClick={HandleProducts}>
+          <Button onClick={HandleProducts} sx={{ color: 'white','&:hover': { backgroundColor: '#ede89aff',color:'black' }, borderRadius: '30px'}}>
             Products
           </Button>
 

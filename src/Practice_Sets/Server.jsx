@@ -8,16 +8,17 @@ function Server() {
       const products = await res.json();
 
       console.log("product", products.products);
-      setProduct(setProduct(product.products));
+      setProduct(products.products);
       }
 
     useEffect(()=>{FetchAPIProductList()}, []);
-  return (
+   return (
     <div>
-   {product?.map((item)=>{
-<div key={item.id}>
-    <p>{item.name}</p>
-</div>})}
+      {product?.map((item) => (
+        <div key={item.id}>
+          <p>{item.title}</p>
+        </div>
+      ))}
     </div>
   )
 }

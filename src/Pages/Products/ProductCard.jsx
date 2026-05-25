@@ -1,25 +1,50 @@
-// src/components/ProductCard.jsx
 import React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Typography,
+  Button,
+} from '@mui/material';
 
-export default function ProductCard({ name, description, image }) {
+import { useNavigate } from 'react-router-dom';
+
+export default function ProductCard({
+  id,
+  name,
+  description,
+  image,
+}) {
+
+  const navigate = useNavigate();
+
   return (
-    <Card sx={{ maxWidth: 350, margin: 2 }}>
-      <CardMedia sx={{ height: 100 }} image={image} title={name} />
+    <Card sx={{ maxWidth: 300, margin: 2 }}>
+
+      <CardMedia
+        sx={{ height: 200 }}
+        image={image}
+        title={name}
+      />
+
       <CardContent>
+
         <Typography gutterBottom variant="h5">
           {name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+
+        <Typography variant="body2">
           {description}
         </Typography>
+
       </CardContent>
-      <Button >Products</Button>
-      <Button size="small">Learn More</Button>
+
+      <Button
+        onClick={() => navigate(`/products/${id}`)}
+      >
+        View Details
+      </Button>
+
     </Card>
   );
 }

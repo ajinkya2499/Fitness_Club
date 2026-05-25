@@ -11,8 +11,14 @@ const initialState = {
     },
     {
       id: 2,
-      name: 'Isolate Protein',
+      name: 'Isolate Proteinssss',
       description: 'Whey isolate is ultra-filtered and rich in BCAAs...',
+      image: wheyImg,
+    },
+       {
+      id: 3, 
+      name: 'Creatine',
+      description: 'Creatine improves strength...',
       image: wheyImg,
     },
   ],

@@ -1,0 +1,33 @@
+.container {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.image {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.price {
+  font-size: 24px;
+  color: green;
+  margin-top: 10px;
+}
+
+.category {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.description {
+  font-size: 18px;
+  margin-top: 15px;
+  line-height: 1.6;
+}

@@ -1,7 +1,7 @@
 // src/pages/ProductDetails.jsx
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ProductCard from './ProductCard';
+import ProductCard from '../ProductCard/ProductCard';
 
 export default function ProductDetails() {
   const products = useSelector((state) => state.product.products);

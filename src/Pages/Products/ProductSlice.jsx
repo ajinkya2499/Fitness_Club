@@ -1,27 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import wheyImg from '../../assets/Images/wheyprotine.jpg';
+import productsData from '../../data/productsData';
+
 
 const initialState = {
-  products: [
-    {
-      id: 1,
-      name: 'Whey Protein',
-      description: 'Whey protein is a high-quality, fast-digesting protein...',
-      image: wheyImg,
-    },
-    {
-      id: 2,
-      name: 'Isolate Proteinssss',
-      description: 'Whey isolate is ultra-filtered and rich in BCAAs...',
-      image: wheyImg,
-    },
-       {
-      id: 3, 
-      name: 'Creatine',
-      description: 'Creatine improves strength...',
-      image: wheyImg,
-    },
-  ],
+  products: productsData
 };
 
 const productSlice = createSlice({

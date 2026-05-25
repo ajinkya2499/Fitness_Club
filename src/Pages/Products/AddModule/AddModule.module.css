@@ -1,0 +1,70 @@
+.container {
+  width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form input,
+.form textarea {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.uploadBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.thumbnailPreview {
+  width: 200px;
+  border-radius: 10px;
+}
+
+.multipleImages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.previewImage {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.submitBtn {
+  padding: 14px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+}

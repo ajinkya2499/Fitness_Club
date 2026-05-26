@@ -1,33 +1,191 @@
 .container {
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+
+  background: #f5f7fb;
+}
+
+.card {
+  position: relative;
+
+  width: 100%;
+  max-width: 1200px;
+
+  background: white;
+
+  border-radius: 28px;
+
+  padding: 40px;
+
+  display: flex;
+  gap: 50px;
+
+  box-shadow:
+    0px 15px 40px rgba(0,0,0,0.08);
+}
+
+/* Close */
+
+.closeBtn {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f3f4f6;
+
+  cursor: pointer;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  transition: 0.3s;
+}
+
+.closeBtn:hover {
+  background: #e4e6eb;
+}
+
+/* Image */
+
+.imageSection {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image {
-  width: 300px;
-  border-radius: 10px;
+  width: 100%;
+  max-width: 450px;
+
+  height: 450px;
+
+  object-fit: cover;
+
+  border-radius: 24px;
 }
 
-.title {
-  font-size: 32px;
-  font-weight: bold;
-  margin-top: 20px;
-}
+/* Content */
 
-.price {
-  font-size: 24px;
-  color: green;
-  margin-top: 10px;
+.content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .category {
-  font-size: 20px;
-  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+
+  color: #5dd6b3;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 52px;
+  font-weight: 700;
+
+  color: #222;
+
+  margin-bottom: 20px;
 }
 
 .description {
   font-size: 18px;
-  margin-top: 15px;
-  line-height: 1.6;
+
+  color: #666;
+
+  line-height: 1.8;
+
+  margin-bottom: 25px;
+}
+
+.price {
+  font-size: 36px;
+  font-weight: 700;
+
+  color: #111;
+
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+
+.actions {
+  display: flex;
+  gap: 16px;
+}
+
+.buyBtn,
+.cartBtn {
+  height: 52px;
+
+  padding: 0 30px;
+
+  border: none;
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.buyBtn {
+  background: #5dd6b3;
+  color: white;
+}
+
+.buyBtn:hover {
+  background: #46c5a2;
+}
+
+.cartBtn {
+  background: #f3f4f6;
+}
+
+.cartBtn:hover {
+  background: #e7e8eb;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+  .card {
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .title {
+    font-size: 38px;
+  }
+
+  .image {
+    height: 320px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
 }

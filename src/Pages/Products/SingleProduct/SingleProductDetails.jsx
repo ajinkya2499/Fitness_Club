@@ -1,12 +1,14 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-import styles from './SingleProductDetails.module.css';
+import styles from "./SingleProductDetails.module.css";
 
 function SingleProductDetails() {
 
   const { id } = useParams();
+
+  const navigate = useNavigate();
 
   const products = useSelector(
     (state) => state.product.products
@@ -23,27 +25,67 @@ function SingleProductDetails() {
   return (
     <div className={styles.container}>
 
-      <img
-        src={singleProduct.image}
-        alt={singleProduct.title}
-        className={styles.image}
-      />
+      <div className={styles.card}>
 
-      <h1 className={styles.title}>
-        {singleProduct.title}
-      </h1>
+        {/* Close Button */}
 
-      <h2 className={styles.price}>
-        ₹ {singleProduct.price}
-      </h2>
+        <button
+          className={styles.closeBtn}
+          onClick={() => navigate("/products")}
+        >
+          ✕
+        </button>
 
-      <h3 className={styles.category}>
-        {singleProduct.category}
-      </h3>
+        {/* Left Image */}
 
-      <p className={styles.description}>
-        {singleProduct.description}
-      </p>
+        <div className={styles.imageSection}>
+          <img
+            src={
+              singleProduct?.image ||
+              "https://via.placeholder.com/500"
+            }
+            alt={singleProduct?.name}
+            className={styles.image}
+          />
+        </div>
+
+        {/* Right Content */}
+
+        <div className={styles.content}>
+
+          <p className={styles.category}>
+            FITNESS PRODUCT
+          </p>
+
+          <h1 className={styles.title}>
+            {singleProduct?.name}
+          </h1>
+
+          <p className={styles.description}>
+            {singleProduct?.description}
+          </p>
+
+          <h2 className={styles.price}>
+            ₹ 2500
+          </h2>
+
+          {/* Buttons */}
+
+          <div className={styles.actions}>
+
+            <button className={styles.buyBtn}>
+              Buy Now
+            </button>
+
+            <button className={styles.cartBtn}>
+              Add To Cart
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </div>
   );

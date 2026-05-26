@@ -1,50 +1,67 @@
-import React from 'react';
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  Button,
-} from '@mui/material';
+import React from "react";
+import styles from "./ProductCard.module.css";
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-export default function ProductCard({
-  id,
-  name,
-  description,
-  image,
+function ProductCard({
+  product,
+  onEdit,
 }) {
 
   const navigate = useNavigate();
 
   return (
-    <Card sx={{ maxWidth: 300, margin: 2 }}>
+    <div className={styles.card}>
 
-      <CardMedia
-        sx={{ height: 200 }}
-        image={image}
-        title={name}
-      />
+      <div className={styles.imageWrapper}>
+        <img
+          src={
+            product?.image ||
+            "https://via.placeholder.com/300"
+          }
+          alt={product?.name}
+          className={styles.image}
+        />
+      </div>
 
-      <CardContent>
+      <div className={styles.content}>
 
-        <Typography gutterBottom variant="h5">
-          {name}
-        </Typography>
+        <h2 className={styles.title}>
+          {product?.name}
+        </h2>
 
-        <Typography variant="body2">
-          {description}
-        </Typography>
+        <p className={styles.description}>
+          {product?.description}
+        </p>
 
-      </CardContent>
+        <div className={styles.footer}>
 
-      <Button
-        onClick={() => navigate(`/products/${id}`)}
-      >
-        View Details
-      </Button>
+          {/* View */}
 
-    </Card>
+          <button
+            className={styles.viewBtn}
+            onClick={() =>
+              navigate(`/products/${product.id}`)
+            }
+          >
+            View
+          </button>
+
+          {/* Edit */}
+
+          <button
+            className={styles.editBtn}
+            onClick={() => onEdit(product)}
+          >
+            Edit
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
   );
 }
+
+export default ProductCard;

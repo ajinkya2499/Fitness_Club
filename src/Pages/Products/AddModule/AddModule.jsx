@@ -1,27 +1,77 @@
-import React from 'react'
-import styles from './AddProduct.module.css';
-import { Handshake } from '@mui/icons-material';
+import React, { useState } from "react";
+import ReusableForm from "../../../Common/ReusableForm/ReusableForm";
 
 function AddModule() {
 
-    function handleSubmit(e){
-            e.preventDefauld()
-    }
+  const [open, setOpen] = useState(true);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    product: "",
+    shortDescription: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log("submit form data ::", formData);
+  };
+
+  const fields = [
+    {
+      label: "Name",
+      name: "name",
+      type: "text",
+      placeholder: "Enter name",
+    },
+    {
+      label: "Product",
+      name: "product",
+      type: "text",
+      placeholder: "Enter product",
+    },
+    {
+      label: "Short Description",
+      name: "shortDescription",
+      type: "text",
+      placeholder: "Enter short description",
+      fullWidth: true,
+    },
+  ];
 
   return (
-    <div className={styles.container}>
-        <h1 className={StyleSheetList.header}>Add Products</h1>
+    <div>
 
-        <form className={styles.form} onSubmit={handleSubmit}>
-            <input type="text" name='title' placeholder='Enter the title'/>
-            <input type="number" name='price' placeholder='enter the price' />
-            <input type="text" name='category' placeholder='enter the catergoty'/>
-            |<input type="text" name='shortdescription' placeholder='enter the Short Description'/>
-            <textarea name='decription' placeholder='Enter the short Description'/>
-        </form>
-      
+      {/* Open Button */}
+
+      <button onClick={() => setOpen(true)}>
+        Open Form
+      </button>
+
+      {/* Modal */}
+
+      {open && (
+        <ReusableForm
+          title="Create Product"
+          fields={fields}
+          handleChange={handleChange}
+          handleSubmit={handleSubmit}
+          formData={formData}
+          buttonText="Create Product"
+
+          onClose={() => setOpen(false)}
+        />
+      )}
+
     </div>
-  )
+  );
 }
 
-export default AddModule
+export default AddModule;

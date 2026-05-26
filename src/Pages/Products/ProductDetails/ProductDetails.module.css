@@ -1,0 +1,72 @@
+.container {
+  padding: 20px;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #222;
+}
+
+/* Create Button */
+
+.createBtn {
+  padding: 12px 22px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #5dd6b3;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.createBtn:hover {
+  background: #42c4a0;
+
+  transform: translateY(-2px);
+}
+
+/* Product Grid */
+
+.productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  gap: 24px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .createBtn {
+    width: 100%;
+  }
+}

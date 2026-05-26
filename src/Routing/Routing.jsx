@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "../Routing/Layout";
-import Home from "../Pages/Home";
+import Home from "../Pages/Dashboard/Home";
 
 import Login from "../Components/EntryPages/Login";
 import SignUpForm from "../Components/EntryPages/SignUpForm";
@@ -11,6 +11,7 @@ import Contact from "../Pages/Contact";
 import Products from "../Pages/Products/ProductDetails/ProductsDetails";
 import Workout from "../Pages/WorkoutTrainer/WorkoutTrainer";
 import SingleProductDetails from "../Pages/Products/SingleProduct/SingleProductDetails";
+import AddModule from "../Pages/Products/AddModule/AddModule";
 
 function Routing() {
   return (
@@ -30,6 +31,7 @@ function Routing() {
           <Route path="products/:id" element={<SingleProductDetails />} />
           <Route path="WorkoutTrainer" element={<Workout />} />
           <Route path="SignUpForm" element={<SignUpForm />} />
+          <Route path="/add-product" element={<AddModule/>}/>
         </Route>
 
         <Route path="/login" element={<Login />} />

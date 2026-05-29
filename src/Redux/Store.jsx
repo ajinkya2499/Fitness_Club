@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import React from 'react'
-import productReducer from '../Pages/Products/ProductSlice'
-import dietReducer from '../Pages/DietNutrition/DietSlicee';
-import workoutReducer from '../Pages/WorkoutTrainer/WorkoutTrainerSlice';
-import authReducer from '../Components/EntryPages/authSlice'
+import productReducer from './Slice/ProductSlice'
+import dietReducer from './Slice/DietSlicee';
+import workoutReducer from './Slice/WorkoutTrainerSlice';
+import authReducer from './Slice/authSlice'
 
 const store = configureStore({
   reducer: {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {selectWorkout} from './WorkoutTrainerSlice'
+import {selectWorkout} from "../../Redux/Slice/WorkoutTrainerSlice"
 import { Box, Button, Card, CardContent, Grid, Typography } from '@mui/material';
 
 function WorkoutTrainer() {

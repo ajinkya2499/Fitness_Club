@@ -1,0 +1,73 @@
+.home {
+  background: #000;
+  color: white;
+  min-height: 100vh;
+}
+
+/* HERO SECTION */
+
+.heroSection {
+  width: 100%;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* CONTENT SECTION */
+
+.contentSection {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.heading {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.description {
+  font-size: 20px;
+  color: #ccc;
+  max-width: 800px;
+  margin: auto;
+  line-height: 35px;
+}
+
+/* CARD SECTION */
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #111;
+  padding: 40px;
+  width: 300px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: yellow;
+}
+
+.card p {
+  color: #ccc;
+  line-height: 28px;
+}

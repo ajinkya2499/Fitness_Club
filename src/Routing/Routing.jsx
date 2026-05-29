@@ -1,50 +1,44 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
-import Layout from '../Routing/Layout';
-import Home from '../Pages/Home';
+import { Routes, Route, Navigate } from "react-router-dom";
+import Layout from "../Routing/Layout";
+import Home from "../Pages/Dashboard/Home";
 
-import Login from '../Components/EntryPages/Login';
-import SignUpForm from '../Components/EntryPages/SignUpForm'
+import Login from "../Components/EntryPages/Login";
+import SignUpForm from "../Components/EntryPages/SignUpForm";
 
-import PrivateRoute from './PrivateRoute';
-import NotFound from './NotFound';
-import Contact from '../Pages/Contact';
-import Products from '../Pages/Products/ProductsDetails'
-import Workout from '../Pages/WorkoutTrainer/WorkoutTrainer'
-
+import PrivateRoute from "./PrivateRoute";
+import NotFound from "./NotFound";
+import Contact from "../Pages/Contact";
+import Products from "../Pages/Products/ProductDetails/ProductsDetails";
+import Workout from "../Pages/WorkoutTrainer/WorkoutTrainer";
+import SingleProductDetails from "../Pages/Products/SingleProduct/SingleProductDetails";
 
 function Routing() {
   return (
     <>
-   <Routes>
-     
-     
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <PrivateRoute>
+              <Layout />
+            </PrivateRoute>
+          }
+        >
+          <Route index element={<Navigate to="home" replace />} />
+          <Route path="home" element={<Home />} />
+          <Route path="products" element={<Products />} />
+          <Route path="products/:id" element={<SingleProductDetails />} />
+          <Route path="WorkoutTrainer" element={<Workout />} />
+          <Route path="SignUpForm" element={<SignUpForm />} />
+        </Route>
 
-      <Route
-        path="/"
-        element={
-          <PrivateRoute>
-            <Layout />
-             
-          </PrivateRoute>
-        }
-      > 
-      <Route index element={<Navigate to="home" replace />} />
-      <Route path= "home" element={<Home/>}/>
-      <Route path= "products" element={<Products/>}/>
-      <Route path="WorkoutTrainer" element={<Workout/>}/>
-      <Route path="SignUpForm" element={<SignUpForm />} />
-      </Route>
+        <Route path="/login" element={<Login />} />
+        <Route path="/contact" element={<Contact />} />
 
-      
-       <Route path="/login" element={<Login />} />
-      <Route path="/contact" element={<Contact/>}/>
-    
-
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
 
 export default Routing;
-

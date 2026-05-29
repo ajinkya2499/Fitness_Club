@@ -7,8 +7,8 @@ import Login from './Components/EntryPages/Login'
 
 import Routing from './Routing/Routing'
 import Contact from './Pages/Contact'
-import Home from './Pages/Home'
-import Server from './Practice_Sets/Server'
+import Home from './Pages/Dashboard/Home'
+
 
 
 

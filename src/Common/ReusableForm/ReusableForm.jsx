@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./ReusableForm.module.css";
 
 function ReusableForm({
@@ -9,7 +9,11 @@ function ReusableForm({
   buttonText,
   title,
   onClose,
-}) {
+}
+
+)
+{
+  const [isDropdownOpen, setIsDropdownOpen ] =useState(false)
   return (
     <div className={styles.overlay}>
       <div className={styles.modal}>
@@ -18,7 +22,9 @@ function ReusableForm({
         <div className={styles.header}>
           <h2>{title}</h2>
 
-          <button type="button" className={styles.closeBtn} onClick={onClose}>✕</button>
+          <button type="button" className={styles.closeBtn} onClick={onClose}>
+            ✕
+          </button>
         </div>
 
         {/* Form */}
@@ -34,14 +40,51 @@ function ReusableForm({
               >
                 <label className={styles.label}>{field.label}</label>
 
-                <input
-                  type={field.type || "text"}
-                  name={field.name}
-                  value={formData[field.name] || ""}
-                  onChange={handleChange}
-                  placeholder={field.placeholder}
-                  className={styles.input}
-                />
+               {field.type === "select" ? (
+  <>
+   <div className={styles.dropdown}>
+  <div
+    className={styles.dropdownHeader}
+    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+  >
+    {formData.product || "Select Product"}
+    <span>▼</span>
+  </div>
+
+  {isDropdownOpen && (
+    <div className={styles.dropdownMenu}>
+      {field.options?.map((option) => (
+        <div
+          key={option.value}
+          className={styles.dropdownItem}
+          onClick={() => {
+            handleChange({
+              target: {
+                name: field.name,
+                value: option.value,
+              },
+            });
+
+            setIsDropdownOpen(false);
+          }}
+        >
+          {option.label}
+        </div>
+      ))}
+    </div>
+  )}
+</div>
+  </>
+) : (
+                  <input
+                    type={field.type || "text"}
+                    name={field.name}
+                    value={formData[field.name] || ""}
+                    onChange={handleChange}
+                    placeholder={field.placeholder}
+                    className={styles.input}
+                  />
+                )}
               </div>
             ))}
           </div>
@@ -49,7 +92,11 @@ function ReusableForm({
           {/* Footer Buttons */}
 
           <div className={styles.footer}>
-            <button type="button" className={styles.cancelBtn} onClick={onClose}>
+            <button
+              type="button"
+              className={styles.cancelBtn}
+              onClick={onClose}
+            >
               Cancel
             </button>
 

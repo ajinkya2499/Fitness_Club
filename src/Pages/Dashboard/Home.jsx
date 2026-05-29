@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Home.module.css";
 
-import gymImage from "../../assets/ImagPM.png";
+// import gymImage from "../../assets/ImagPM.png";
 
 function Home() {
   return (
@@ -9,11 +9,11 @@ function Home() {
 
       {/* HERO IMAGE */}
       <div className={styles.heroSection}>
-        <img
+        {/* <img
           src={gymImage}
           alt="gym"
           className={styles.heroImage}
-        />
+        /> */}
       </div>
 
       {/* CONTENT SECTION */}
@@ -41,14 +41,7 @@ function Home() {
           </p>
         </div>
 
-        {/* CARD 2 */}
-        <div className={styles.card}>
-          <h2>Diet & Protein</h2>
 
-          <p>
-            Personalized diet plans and supplements for better performance.
-          </p>
-        </div>
 
         {/* CARD 3 */}
         <div className={styles.card}>
@@ -56,6 +49,15 @@ function Home() {
 
           <p>
             Flexible membership plans with premium gym facilities and support.
+          </p>
+        </div>
+
+                {/* CARD 2 */}
+        <div className={styles.card}>
+          <h2>Diet & Protein</h2>
+
+          <p>
+            Personalized diet plans and supplements for better performance.
           </p>
         </div>
 

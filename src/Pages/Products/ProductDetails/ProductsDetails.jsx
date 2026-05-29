@@ -49,27 +49,34 @@ export default function ProductDetails() {
     setOpen(true)
   }
 
-  const fields = [
-    {
-      label: "Name",
-      name: "name",
-      type: "text",
-      placeholder: "Enter name",
-    },
-    {
-      label: "Product",
-      name: "product",
-      type: "text",
-      placeholder: "Enter product",
-    },
-    {
-      label: "Short Description",
-      name: "shortDescription",
-      type: "text",
-      placeholder: "Enter short description",
-      fullWidth: true,
-    },
-  ];
+ const productOptions = [
+  { label: "Whey Protein", value: "whey-protein" },
+  { label: "Mass Gainer", value: "mass-gainer" },
+  { label: "Creatine", value: "creatine" },
+  { label: "Pre Workout", value: "pre-workout" },
+];
+
+const fields = [
+  {
+    label: "Name",
+    name: "name",
+    type: "text",
+    placeholder: "Enter name",
+  },
+  {
+    label: "Product",
+    name: "product",
+    type: "select",
+    options: productOptions,
+  },
+  {
+    label: "Short Description",
+    name: "shortDescription",
+    type: "text",
+    placeholder: "Enter short description",
+    fullWidth: true,
+  },
+];
 
   return (
     <div className={styles.container}>
